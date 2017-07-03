@@ -102,12 +102,14 @@ public class SelectOp<A> extends DB<List<A>>
 
 ```
 
+---
 ### Descripton
 It describes
 - Does not read
 - Does not update
 - Does not throw
 
+---
 ### Descripton
 - Does not launch the nukes |
 
