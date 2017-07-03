@@ -1,7 +1,7 @@
 ---
 # sane-dbc
 > A sane approach to interacting with an RDBMS in Java
-  
+
 Dimitar Georgiev, Novarto Ltd.
 
 <span>https://github.com/dimitarg</span>
@@ -26,6 +26,8 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 CREATE TABLE FOO (ID INTEGER IDENTITY PRIMARY KEY, DESCRIPTION NVARCHAR(100))
 ```
 
++++
+### A program in plain JDBC
 ```java
 void insertSomeFoos(Connection c) throws SQLException
 {
@@ -40,7 +42,9 @@ void insertSomeFoos(Connection c) throws SQLException
 
     }
 }
-    
+
++++
+### A program in plain JDBC
 List<Foo> selectTheFoos(Connection c) throws SQLException
 {
     try(PreparedStatement s = c.prepareStatement("SELECT ID, DESCRIPTION FROM FOO"))
@@ -51,9 +55,9 @@ List<Foo> selectTheFoos(Connection c) throws SQLException
         {
             result.add(new Foo(rs.getInt(1), rs.getString(2)));
         }        
-    
+
         return result;
-    
+
     }
 }
 ```
