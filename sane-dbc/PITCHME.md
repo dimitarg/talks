@@ -48,7 +48,8 @@ void insertSomeFoos(Connection c) throws SQLException
 ```java
 List<Foo> selectTheFoos(Connection c) throws SQLException
 {
-    try(PreparedStatement s = c.prepareStatement("SELECT ID, DESCRIPTION FROM FOO"))
+    try(PreparedStatement s = c.prepareStatement(
+            "SELECT ID, DESCRIPTION FROM FOO"))
     {
         List<Foo> result = new ArrayList<>();
         ResultSet rs = s.executeQuery();
