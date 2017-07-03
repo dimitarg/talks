@@ -87,5 +87,5 @@ A run(Connection c) throws SQLException;
 @[1](fj.control.db.DB)
 
 ---
->A DB instance 
+>A `DB` instance is a **description** of a database interaction.
 
