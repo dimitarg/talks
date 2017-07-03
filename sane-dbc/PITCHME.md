@@ -64,3 +64,15 @@ List<Foo> selectTheFoos(Connection c) throws SQLException
     }
 }
 ```
+
+---
+Essentially,
+
+```java
+void insertSomeFoos(Connection c) throws SQLException;
+List<Foo> selectTheFoos(Connection c) throws SQLException;
+```
+@[1]
+@[2]
+
+`=>`<!-- .element: class="fragment" -->
