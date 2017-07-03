@@ -88,7 +88,7 @@ A run(Connection c) throws SQLException;
 
 ---
 ### Descripton
->A `DB` instance is a **description** of a database interaction.
+>A `DB` instance is a **value** which **describes** a database interaction.
 
 ```java
 public class SelectOp<A> extends DB<List<A>>
@@ -112,6 +112,23 @@ It describes
 +++?image=assets/sane-dbc/nuke.jpg
 ### Descripton
 - Does not launch the nukes |
+
++++
+### Descripton
+
+```java
+public DB<List<A>> selectTheFoos()
+{
+    return new SelectOp("SELECT * FROM FOO", ...)
+}
+
+public void doesNotLaunchTheNukes()
+{
+    selectTheFoos();
+    selectTheFoos();
+    selectTheFoos();
+}
+```
 
 
 
