@@ -80,10 +80,11 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 `=>`
 
 +++
-## `fj.control.db.DB`
+## This
 ```java
 A run(Connection c) throws SQLException;
 ```
+@[1](fj.control.db.DB)
 
 ---
 >A DB instance 
