@@ -102,16 +102,17 @@ public class SelectOp<A> extends DB<List<A>>
 
 ```
 
----
++++
 ### Descripton
 It describes
 - Does not read
 - Does not update
 - Does not throw
 
----
++++?image=assets/sane-dbc/nuke.jpg
 ### Descripton
 - Does not launch the nukes |
+
 
 
 
