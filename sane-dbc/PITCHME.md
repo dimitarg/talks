@@ -12,6 +12,7 @@ Dimitar Georgiev, Novarto Ltd.
 > `sane-dbc` addresses the aspect of RDBMS interaction in the Java programming language.
 It optimizes for programmer efficiency, robustness and runtime performance.
 
+---
 ## Java - Current state of affairs
 
 - ORM
