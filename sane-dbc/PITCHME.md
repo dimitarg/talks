@@ -66,7 +66,7 @@ List<Foo> selectTheFoos(Connection c) throws SQLException
 ```
 
 ---
-Essentially,
+## Essentially,
 
 ```java
 void insertSomeFoos(Connection c) throws SQLException;
@@ -86,5 +86,5 @@ A run(Connection c) throws SQLException;
 @[1](`fj.control.db.DB`)
 
 ---
-A class that implements the signature
+>A DB instance 
 
