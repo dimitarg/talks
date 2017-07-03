@@ -87,5 +87,29 @@ A run(Connection c) throws SQLException;
 @[1](fj.control.db.DB)
 
 ---
+### Descripton
 >A `DB` instance is a **description** of a database interaction.
+
+```java
+public class SelectOp<A> extends DB<List<A>>
+{
+    @Override
+    public List<A> run(Connection c) throws SQLException
+    {
+     // do the business
+    }
+}
+
+```
+
+### Descripton
+It describes
+- Does not read
+- Does not update
+- Does not throw
+
+### Descripton
+- Does not launch the nukes |
+
+
 
