@@ -83,3 +83,8 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 ```java
 A run(Connection c) throws SQLException;
 ```
+@[1](this is fj.control.db.DB)
+
+---
+A class that implements the signature
+
