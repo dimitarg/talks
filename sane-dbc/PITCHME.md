@@ -66,7 +66,7 @@ List<Foo> selectTheFoos(Connection c) throws SQLException
 ```
 
 ---
-## Essentially,
+### Essentially,
 
 ```java
 void insertSomeFoos(Connection c) throws SQLException;
@@ -75,10 +75,11 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 @[1]
 @[2]
 
-
+### Essentially,
 +++
 `=>`
 
+### Essentially,
 +++
 ```java
 A run(Connection c) throws SQLException;
