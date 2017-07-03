@@ -4,7 +4,7 @@
   
 Dimitar Georgiev, Novarto Ltd.
 
-[dimitarg](github.com/dimitarg)
+<span>https://github.com/dimitarg</span>
 
 ---
 ## Mission
@@ -15,6 +15,6 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ---
 ## Java - Current state of affairs
 
-- ORM <!-- .element: class="fragment" |
+- ORM |
 - Code generation (jOOQ) |
 - Utilities - Spring JdbcTemplate, Apache DbUtils, etc |
