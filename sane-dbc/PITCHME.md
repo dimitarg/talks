@@ -65,6 +65,7 @@ List<Foo> selectTheFoos(Connection c) throws SQLException
 }
 ```
 
+
 ---
 ### Essentially,
 
@@ -75,16 +76,14 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 @[1]
 @[2]
 
-### Essentially,
 +++
 `=>`
 
-### Essentially,
 +++
+## `fj.control.db.DB`
 ```java
 A run(Connection c) throws SQLException;
 ```
-@[1](`fj.control.db.DB`)
 
 ---
 >A DB instance 
