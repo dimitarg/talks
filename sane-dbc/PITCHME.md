@@ -76,3 +76,7 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 @[2]
 
 `=>`<!-- .element: class="fragment" -->
+
+```java
+A run(Connection c) throws SQLException;
+```
