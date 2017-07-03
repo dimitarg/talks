@@ -15,7 +15,7 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ---
 ## Java - Current state of affairs
 
-- ORM |
-- Code generation (jOOQ) |
-- Utilities - Spring `JdbcTemplate`, Apache `DbUtils`, etc |
+- ORM <!-- .element: class="fragment" -->
+- Code generation (jOOQ) <!-- .element: class="fragment" -->
+- Utilities - Spring `JdbcTemplate`, Apache `DbUtils`, etc <!-- .element: class="fragment" -->
 
