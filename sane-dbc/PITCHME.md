@@ -23,7 +23,8 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ### A program in plain JDBC
 
 ```sql
-CREATE TABLE FOO (ID INTEGER IDENTITY PRIMARY KEY, DESCRIPTION NVARCHAR(100))
+CREATE TABLE FOO
+(ID INTEGER IDENTITY PRIMARY KEY, DESCRIPTION NVARCHAR(100))
 ```
 
 +++
