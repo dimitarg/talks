@@ -13,6 +13,14 @@ Dimitar Georgiev, Novarto Ltd.
 It optimizes for programmer efficiency, robustness and runtime performance.
 
 ---
+### Agenda
+
+- Current situation |
+- Essence of DB Interaction |
+- Basic usage |
+- Composition |
+
+---
 ### Java - Current state of affairs
 
 - ORM |
