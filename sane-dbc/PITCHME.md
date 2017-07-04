@@ -117,7 +117,7 @@ It describes
 ### Descripton
 
 ```java
-public DB<List<A>> selectTheFoos()
+public DB<List<Foo>> selectTheFoos()
 {
     return new SelectOp("SELECT * FROM FOO", ...)
 }
@@ -134,6 +134,25 @@ public void doesNotLaunchTheNukes()
 ### That's it. 
 - Questions and beers?
 - Really, that's all there is |
+
+---
+### Interpretation
+
+>An interpreter is the piece of code which takes a `DB<A>` and calls its `run()` method.
+
+- The interpreter launches the nukes |
+- May wrap the result of `DB<A>.run()` in another type |
+- Responsible for all aspects of actual execution |
+    - Transactionality or lack thereof |
+    - Connection management |
+    - Error handling |
+    - Forking, or lack thereof |
+
+
++++
+### Simple interpretation
+
+
 
 
 
