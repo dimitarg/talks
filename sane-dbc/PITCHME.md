@@ -204,7 +204,7 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 @[7]
 @[8](Turns a `DB<A>` into a `CompletableFuture<A>`. Failure of the operation will fail the future)
 
----?code=https://github.com/novarto-oss/sane-dbc/blob/master/sane-dbc-examples/src/test/java/com/novarto/sanedbc/examples/BasicUsage.java
+---?image=https://github.com/novarto-oss/sane-dbc/blob/master/sane-dbc-examples/src/test/java/com/novarto/sanedbc/examples/BasicUsage.java
 ###Built-in ops
 
 
