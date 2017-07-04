@@ -154,6 +154,19 @@ public void doesNotLaunchTheNukes()
 
 +++
 ### Simple interpretation
+```java
+SyncDbInterpreter dbi = new SyncDbInterpreter(
+    () -> DriverManager.getConnection("jdbc:hsqldb:mem:test", "sa", "")
+);
+
+DB<List<Foo>> selectOp = selectTheFoos();    
+List<Foo> foos = dbi.submit(selectTheFoos());
+```
+@[1](Interpreters are stateless, so nothing special here)
+@[2](Needs a supplier for connections. Lazy, still no side effect here)
+@[3]
+@[4](Turns a `DB<A>` into an `A`, throws `RuntimeException` on failure)
+
 
 
 
