@@ -187,7 +187,8 @@ Integer updateCount = dbi.transact(batchInsert);
 +++
 ### Production setup
 ```java
-HikariDataSource ds = Hikari.createHikari(jdbcUrl, user, pass,
+HikariDataSource ds = Hikari.createHikari(
+    jdbcUrl, user, pass,
     DbSpecific.defaultMysqlConnectionProps(false));
 ExecutorService executor = Executors.newCachedThreadPool();
 
