@@ -167,6 +167,22 @@ List<Foo> foos = dbi.submit(selectTheFoos());
 @[5]
 @[6](Turns a `DB<A>` into an `A`, throws `RuntimeException` on failure)
 
++++
+### Simple transactional interpretation
+```java
+DataSourse ds = getYourPooledDatasource();
+SyncDbInterpreter dbi = new SyncDbInterpreter(
+    () -> ds.getConnection()
+);
+
+DB<Integer> batchInsert = batchInsertFoos(asList("foo", "bar", "baz"));    
+Integer updateCount = dbi.transact(batchInsert);
+```
+@[1](You can use a datasource as a supplier of connection, but not mandatory)
+@[2](Needs a supplier for connections. Lazy, still no side effect here)
+@[6](Will return the update count upon interpretation)
+@[7](Turns a `DB<A>` into an `A`, rolls back and throws `RuntimeException` on failure)
+
 
 
 
