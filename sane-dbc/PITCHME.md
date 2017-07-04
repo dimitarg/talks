@@ -190,6 +190,7 @@ Integer updateCount = dbi.transact(batchInsert);
 HikariDataSource ds = Hikari.createHikari(
     jdbcUrl, user, pass,
     DbSpecific.defaultMysqlConnectionProps(false));
+
 ExecutorService executor = Executors.newCachedThreadPool();
 
 AsyncDbInterpreter dbi = new AsyncDbInterpreter(ds, executor);
@@ -198,10 +199,10 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 
 ```
 @[1](Hikari support for free)
-@[2](Sensible defaults for MySQL, can override)
-@[3](Worker pool for blocking on JDBC and Hikari Pool)
-@[5]
-@[6](Turns a `DB<A>` into a `CompletableFuture<A>`. Failure of the operation will fail the future)
+@[3](Sensible defaults for MySQL, can override)
+@[5](Worker pool for blocking on JDBC and Hikari Pool)
+@[7]
+@[8](Turns a `DB<A>` into a `CompletableFuture<A>`. Failure of the operation will fail the future)
 
 
 
