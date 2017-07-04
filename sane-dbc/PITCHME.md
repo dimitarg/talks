@@ -141,7 +141,10 @@ public void doesNotLaunchTheNukes()
 >An interpreter is the piece of code which takes a `DB<A>` and calls its `run()` method.
 
 - The interpreter launches the nukes |
-- May wrap the result of `DB<A>.run()` in another type |
+- May wrap the result of run() in another type |
+
++++
+### Interpretation
 - Responsible for all aspects of actual execution |
     - Transactionality or lack thereof |
     - Connection management |
