@@ -178,8 +178,8 @@ SyncDbInterpreter dbi = new SyncDbInterpreter(
 DB<Integer> batchInsert = batchInsertFoos(asList("foo", "bar", "baz"));    
 Integer updateCount = dbi.transact(batchInsert);
 ```
-@[1](You can use a datasource as a supplier of connection, but not mandatory)
-@[2](Needs a supplier for connections. Lazy, still no side effect here)
+@[1](You can use a datasource as a supplier of connections)
+@[2](Same interpreter type)
 @[6](Will return the update count upon interpretation)
 @[7](Turns a `DB<A>` into an `A`, rolls back and throws `RuntimeException` on failure)
 
