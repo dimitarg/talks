@@ -160,7 +160,7 @@ SyncDbInterpreter dbi = new SyncDbInterpreter(
 );
 
 DB<List<Foo>> selectOp = selectTheFoos();    
-List<Foo> foos = dbi.submit(selectTheFoos());
+List<Foo> foos = dbi.submit(selectOp);
 ```
 @[1](Interpreters are stateless, so nothing special here)
 @[2](Needs a supplier for connections. Lazy, still no side effect here)
@@ -175,13 +175,32 @@ SyncDbInterpreter dbi = new SyncDbInterpreter(
     () -> ds.getConnection()
 );
 
-DB<Integer> batchInsert = batchInsertFoos(asList("foo", "bar", "baz"));    
+DB<Integer> batchInsert = batchInsertFoos(
+        asList("foo", "bar", "baz"));    
 Integer updateCount = dbi.transact(batchInsert);
 ```
 @[1](You can use a datasource as a supplier of connections)
 @[2](Same interpreter type)
 @[6](Will return the update count upon interpretation)
-@[7](Turns a `DB<A>` into an `A`, rolls back and throws `RuntimeException` on failure)
+@[8](Turns a `DB<A>` into an `A`, rolls back and throws `RuntimeException` on failure)
+
++++
+### Production setup
+```java
+HikariDataSource ds = Hikari.createHikari(jdbcUrl, user, pass,
+    DbSpecific.defaultMysqlConnectionProps(false));
+ExecutorService executor = Executors.newCachedThreadPool();
+
+AsyncDbInterpreter dbi = new AsyncDbInterpreter(ds, executor);
+CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
+
+
+```
+@[1](Hikari support for free)
+@[2](Sensible defaults for MySQL, can override)
+@[3](Worker pool for blocking on JDBC and Hikari Pool)
+@[5]
+@[6](Turns a `DB<A>` into a `CompletableFuture<A>`. Failure of the operation will fail the future)
 
 
 
