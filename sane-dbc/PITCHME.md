@@ -255,5 +255,5 @@ DB<Map<Integer, List<Employee>>> byId =
 ```
 @[2]
 @[5] Mapping a DB with a function gives another DB. No side effect
-@[6] Group employees by department id
+@[6] Group employees by department id, using java.util.Stream
 
