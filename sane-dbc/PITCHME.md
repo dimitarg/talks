@@ -206,7 +206,7 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 
 
 ```
-@[1](Hikari support for free)
+@[1](HikariCP support for free)
 @[3](Sensible defaults for MySQL, can override)
 @[5](Worker pool for blocking on JDBC and Hikari Pool)
 @[7]
@@ -217,7 +217,23 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 
 [Sample usage](https://github.com/novarto-oss/sane-dbc/blob/master/sane-dbc-examples/src/test/java/com/novarto/sanedbc/examples/BasicUsage.java)
 
+---
+### Composition
+
+Composition lets us build composite `DB` operations out of `DB` operations, aiding in code reuse and deduplication.
+Composition does not work for side effects, but it does for descriptions of them!
+
+```java
+public abstract class DB<A> 
+{
+    public final <B> DB<B> map(final F<A, B> f){/*...*/}
+    
+    public final <B> DB<B> bind(final F<A, DB<B>> f){/*...*/}
+    
+    //...
+}
 
 
-
-
+```
+@[3]
+@[5](also known as `flatMap`)
