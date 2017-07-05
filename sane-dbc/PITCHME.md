@@ -259,3 +259,17 @@ DB<Map<Integer, List<Employee>>> byId =
 @[5](Mapping a DB with a function gives another DB. No side effect)
 @[7](Group employees by department id, using java.util.Stream)
 
+### `map()`
+```java
+DB<Option<User>> selectUser = selectUser(email);
+DB<Boolean> loginOk = 
+selectUser.map(userOption -> {
+    if (userOption.isNone())
+        {
+            return false;
+        }
+
+        User user = userOption.some();
+        return hash(password).equals(user.hash);
+    });
+```
