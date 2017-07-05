@@ -242,3 +242,6 @@ public abstract class DB<A>
 ```
 @[3]
 @[5](also known as `flatMap`)
+
++++ `map()`
+
