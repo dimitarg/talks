@@ -304,3 +304,10 @@ DB<Either<String, List<Order>>> selectOrders =
 );
             
 ```
+@[1]
+@[2]
+@[3](take the result of one operation, and return another operation)
+@[4]
+@[8](DB.unit(x) returns a successful DB with a result x)
+@[11](DB<List<Order>>)
+@[12](Result is DB<Either<String, List<Order>>>)
