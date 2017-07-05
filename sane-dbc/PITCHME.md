@@ -281,3 +281,26 @@ selectUser.map(userOption -> {
 @[6](invalid username)
 @[9]
 @[10](validate password)
+
+
++++
+### `bind()`
+
+```java
+DB<Boolean> login = login(email, pass);
+DB<Either<String, List<Order>>> selectOrders =
+    login.bind(success -> {
+        if(!success)
+        {
+            Either<String, List<Order>> err =
+                Either.left("auth failure");
+                return DB.unit(err);
+        }
+        
+        return selectOrdersByEmail(email)
+        .map(orders ->
+            Either.right(orders));
+    }
+);
+            
+```
