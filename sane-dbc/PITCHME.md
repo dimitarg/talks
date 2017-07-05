@@ -224,7 +224,6 @@ Compose DB operations with
 - functions
 - Other DB operations
 
-
 - code reuse
 - deduplication
 - does not work for side effects, but it does for descriptions of them!
