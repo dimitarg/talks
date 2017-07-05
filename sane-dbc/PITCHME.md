@@ -220,8 +220,10 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 ---
 ### Composition
 
-Composition lets us build composite `DB` operations out of `DB` operations, aiding in code reuse and deduplication.
-Composition does not work for side effects, but it does for descriptions of them!
+Compose `DB` operations out of `DB` operations
+- code reuse
+- deduplication
+- does not work for side effects, but it does for descriptions of them!
 
 ```java
 public abstract class DB<A> 
