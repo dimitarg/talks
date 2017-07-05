@@ -332,7 +332,7 @@ DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
 - DB handles the composition
 - We handle the JDBC boilerplate
 
----
++++
 ### Summary
 - Flexibility
 - Performance
@@ -341,7 +341,7 @@ DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
 - Robustness and sanity
 - Reuse and conciseness through composition
 
----
++++
 ### Thank you!
 <span>https://github.com/novarto-oss/sane-dbc</span>
 
