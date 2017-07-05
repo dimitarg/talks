@@ -254,6 +254,7 @@ DB<Map<Integer, List<Employee>>> byId =
         employees.stream().collect(groupingBy(
             employee -> employee.departmentId)));
 ```
+@[1]
 @[2]
 @[5](Mapping a DB with a function gives another DB. No side effect)
 @[7](Group employees by department id, using java.util.Stream)
