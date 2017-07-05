@@ -220,9 +220,9 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 ---
 ### Composition
 
-Compose `DB` operations with
+Compose DB operations with
 - functions
-- Other `DB` operations
+- Other DB operations
 
 
 - code reuse
