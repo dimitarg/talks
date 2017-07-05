@@ -243,5 +243,12 @@ public abstract class DB<A>
 @[3]
 @[5](also known as `flatMap`)
 
-+++ `map()`
++++ 
+### `map()`
+```java
+DB<List<Employee>> selectEmployees = EmployeeDb.selectByIds(asList(2, 1, 4, 3));
+
+DB<Map<Integer, List<Employee>>> byId = selectEmployees.map(employees ->
+    employees.stream().collect(Collectors.groupingBy(employee -> employee.departmentId)));
+```
 
