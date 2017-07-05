@@ -274,3 +274,10 @@ selectUser.map(userOption -> {
         return hash(password).equals(user.hash);
     });
 ```
+@[1]
+@[2]
+@[3]
+@[4]
+@[6](invalid username)
+@[9]
+@[10](validate password)
