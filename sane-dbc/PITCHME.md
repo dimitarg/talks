@@ -251,4 +251,7 @@ DB<List<Employee>> selectEmployees = EmployeeDb.selectByIds(asList(2, 1, 4, 3));
 DB<Map<Integer, List<Employee>>> byId = selectEmployees.map(employees ->
     employees.stream().collect(Collectors.groupingBy(employee -> employee.departmentId)));
 ```
+@[1]
+@[3] Mapping a DB with a function gives another DB. No side effect
+@[4] Group employees by department id
 
