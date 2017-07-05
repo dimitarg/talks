@@ -312,3 +312,16 @@ DB<Either<String, List<Order>>> selectOrders =
 @[11](`DB<List<Order>>`)
 @[12]
 @[13](Result is `DB<Either<String, List<Order>>>`)
+
++++
+### `bind()` - sequencing side effects
+
+```java
+DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
+    deleteAddresses(user).bind(ignore2 -> 
+        deleteUser(user).map(ignore3 ->
+            Unit.unit()
+        )
+    )
+);
+```
