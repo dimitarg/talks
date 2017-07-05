@@ -229,6 +229,8 @@ Compose DB operations with
 - deduplication
 - does not work for side effects, but it does for descriptions of them!
 
++++
+### Composition
 ```java
 public abstract class DB<A> 
 {
