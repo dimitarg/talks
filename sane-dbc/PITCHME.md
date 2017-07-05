@@ -251,7 +251,7 @@ DB<List<Employee>> selectEmployees =
 
 DB<Map<Integer, List<Employee>>> byId =
     selectEmployees.map(employees ->
-    employees.stream().collect(Collectors.groupingBy(employee -> employee.departmentId)));
+    employees.stream().collect(groupingBy(employee -> employee.departmentId)));
 ```
 @[2]
 @[5] Mapping a DB with a function gives another DB. No side effect
