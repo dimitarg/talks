@@ -219,14 +219,12 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 
 ---
 ### Composition
+Principle of writing software
+- compose functions into programs
+- compose programs into larger programs
 
-Compose DB operations with
-- functions
-- Other DB operations
-
-- code reuse
-- deduplication
-- does not work for side effects, but it does for descriptions of them!
+This never works with side effects
+- But it does with descriptions of them
 
 +++
 ### Composition
