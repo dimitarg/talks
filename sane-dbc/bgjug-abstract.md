@@ -16,8 +16,11 @@ The talk presumes no prerequisites besides intermediate command of Java, and bas
 
 # About the author
 
-asdasd
+![image](../assets/DSC03207.JPG)
 
-![image](https://www.facebook.com/photo.php?fbid=757423357796930&l=21bcb745e4 "image")
+Dimitar Georgiev is a software engineer with a decade of experience programming on the JVM platform. He is specialized in Java, Scala, Functional Programming, HTTP, system integration, performance measurements and optimizations, and quality assurance through automating and testing all the things.
 
-asadasd
+Dimitar is an author of the [sane-dbc](https://github.com/novarto-oss/sane-dbc) library and the soon-to-be opensourced
+[cletty](https://github.com/novarto-oss/cletty) HTTP/2 server. 
+
+Since 2013 he is employed at Novarto Ltd., where he works as a software architect, focusing on E-Commerce systems and custom applications.
