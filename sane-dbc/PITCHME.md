@@ -28,8 +28,28 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 - No type safety for effects |
     - Results in distributed system fallacies |
 - Lack of referential transparency |
-    - Cannot reason about programs
+    - Cannot reason about programs |
     - Cannot compose programs |
+
+
++++ No type safety of effects
+
+```java
+public String foo()
+{
+    return "42";
+}
+
+public String bar()
+{
+    return entityManager.find(String.class, 42);
+}
+```
+
+- Same freaking signature!!! |
+- Compiler wont't stop you |
+- For loop with a DB call in the body
+    
 ---
 ### A program in plain JDBC
 
