@@ -25,7 +25,7 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 
 - Mostly generated SQL |
     - But handwritten SQL is the best SQL |
-- No type safety for effects |
+- No type safety for side effects |
     - Results in distributed system fallacies |
 - Lack of referential transparency |
     - Cannot reason about programs |
@@ -33,7 +33,7 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 
 
 +++
-### No type safety of effects
+### No type safety for side effects
 
 ```java
 public String foo()
@@ -50,7 +50,18 @@ public String bar()
 - Same freaking signature |
 - Compiler wont't stop you |
 - For loop with a DB call in the body |
-    
+
++++
+### Fallacies of distrubuted computing
+
+This makes the programmer think they are calling a function in local address space, when in fact they are dealing with
+a distributed system.
+
+- This is EJB and JAX-WS all over again |
+- https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing |
+
+
+
 ---
 ### A program in plain JDBC
 
