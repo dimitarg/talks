@@ -36,14 +36,14 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ### No type safety for side effects
 
 ```java
-public String foo()
+public Thingie foo()
 {
-    return "42";
+    return new Thingie(42, "A thingie");
 }
 
-public String bar()
+public Thingie bar()
 {
-    return entityManager.find(String.class, 42);
+    return entityManager.find(Thingie.class, 42);
 }
 ```
 
@@ -57,12 +57,52 @@ public String bar()
 This makes the programmer think they are calling a function in local address space, when in fact they are dealing with
 a distributed system.
 
-- This is EJB and JAX-WS all over again |
-- https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing |
+- This is EJB and JAX-WS all over again
+- https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 
 
++++
+### Referential transparency
+
+```java
+int x = foo();
+int y = x;
+```
+
+<===>
+
+```java
+int x = foo();
+int y = foo();
+```
+
+- Powerful reasoning technique - [equational reasoning](https://www.google.bg/search?q=equational+reasoning) |
+
+
++++
+### Referential transparency - broken
+
+```java
+public int foo()
+{
+    doSomethingWithDatabase();
+    // all bets are off now
+    // no referential transparency
+    // no function composition
+    // no automatic reasoning
+    // no maths, mostly
+    // this is no longer a function
+    return 42;
+}
+```
 
 ---
+### Towards a better world
+
+- These problems were solved decades ago |
+- The solution is simple |
+    
++++
 ### A program in plain JDBC
 
 ```sql
