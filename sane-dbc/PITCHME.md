@@ -167,7 +167,23 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 ```java
 A run(Connection c) throws SQLException;
 ```
-@[1](fj.control.db.DB)
+
+
++++
+### It already exists
+
+```java
+package fj.control.db;
+
+public abstract class DB<A> {
+
+  //...
+  public abstract A run(final Connection c) throws SQLException;
+  //...
+}
+```
+@[3](https://github.com/functionaljava/functionaljava/blob/master/core/src/main/java/fj/control/db/DB.java)
+
 
 ---
 ### Descripton
