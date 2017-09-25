@@ -24,12 +24,12 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ### Java - Current state of affairs
 
 - Mostly generated SQL |
-    * But handwritten SQL is the best SQL
+    * But handwritten SQL is the best SQL |
 - No type safety for effects |
-    * Results in distributed system fallacies
-- Lack of referential transparency
-    * Cannot reason about programs
-    * Cannot compose programs
+    * Results in distributed system fallacies |
+- Lack of referential transparency |
+    * Cannot reason about programs |
+    * Cannot compose programs |
 ---
 ### A program in plain JDBC
 
