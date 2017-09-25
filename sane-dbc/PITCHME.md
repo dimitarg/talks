@@ -34,6 +34,7 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 
 +++
 ### No type safety of effects
+
 ```java
 public String foo()
 {
