@@ -23,11 +23,86 @@ It optimizes for programmer efficiency, robustness and runtime performance.
 ---
 ### Java - Current state of affairs
 
-- ORM |
-- Code generation (jOOQ) |
-- Utilities - Spring JdbcTemplate, Apache DbUtils, etc |
+- Mostly generated SQL |
+    - But handwritten SQL is the best SQL |
+- No type safety for side effects |
+    - Results in distributed system fallacies |
+- Lack of referential transparency |
+    - Cannot reason about programs |
+    - Cannot compose programs |
+
+
++++
+### No type safety for side effects
+
+```java
+public Thingie foo()
+{
+    return new Thingie(42, "A thingie");
+}
+
+public Thingie bar()
+{
+    return entityManager.find(Thingie.class, 42);
+}
+```
+
+- Same freaking signature |
+- Compiler wont't stop you |
+- For loop with a DB call in the body |
+
++++
+### Fallacies of distrubuted computing
+
+This makes the programmer think they are calling a function in local address space, when in fact they are dealing with
+a distributed system.
+
+- This is EJB and JAX-WS all over again
+- https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
+
+
++++
+### Referential transparency
+
+```java
+int x = foo();
+int y = x;
+```
+
+<===>
+
+```java
+int x = foo();
+int y = foo();
+```
+
+- Powerful reasoning technique: [equational reasoning](https://www.google.bg/search?q=equational+reasoning) |
+
+
++++
+### Referential transparency - broken
+
+```java
+public int foo()
+{
+    doSomethingWithDatabase();
+    // all bets are off now
+    // no referential transparency
+    // no function composition
+    // no automatic reasoning
+    // no maths, mostly
+    // this is no longer a function
+    return 42;
+}
+```
 
 ---
+### Towards a better world
+
+- These problems were solved decades ago |
+- The solution is simple |
+    
++++
 ### A program in plain JDBC
 
 ```sql
@@ -92,7 +167,23 @@ List<Foo> selectTheFoos(Connection c) throws SQLException;
 ```java
 A run(Connection c) throws SQLException;
 ```
-@[1](fj.control.db.DB)
+
+
++++
+### It already exists
+
+```java
+package fj.control.db;
+
+public abstract class DB<A> {
+
+  //...
+  public abstract A run(final Connection c) throws SQLException;
+  //...
+}
+```
+@[3](https://github.com/functionaljava/functionaljava/blob/master/core/src/main/java/fj/control/db/DB.java)
+
 
 ---
 ### Descripton
@@ -213,7 +304,7 @@ CompletableFuture<List<Foo>> foos = dbi.submit(selectTheFoos());
 @[8](Turns a `DB<A>` into a `CompletableFuture<A>`. Failure of the operation will fail the future)
 
 ---
-###Built-in ops
+### Built-in ops
 
 [Sample usage](https://github.com/novarto-oss/sane-dbc/blob/master/sane-dbc-examples/src/test/java/com/novarto/sanedbc/examples/BasicUsage.java)
 
