@@ -32,8 +32,8 @@ It optimizes for programmer efficiency, robustness and runtime performance.
     - Cannot compose programs |
 
 
-+++ No type safety of effects
-
++++
+### No type safety of effects
 ```java
 public String foo()
 {
