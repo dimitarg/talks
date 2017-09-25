@@ -47,9 +47,9 @@ public String bar()
 }
 ```
 
-- Same freaking signature!!! |
+- Same freaking signature |
 - Compiler wont't stop you |
-- For loop with a DB call in the body
+- For loop with a DB call in the body |
     
 ---
 ### A program in plain JDBC
