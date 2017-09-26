@@ -427,12 +427,15 @@ DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
 
 ---
 ### Summary
+
 - You write the SQL
 - DB handles the composition
 - We handle the JDBC boilerplate
 
 +++
 ### Thank you!
-Learn more at
+
+Learn more:
+
 <span>https://github.com/novarto-oss/sane-dbc</span>
 
