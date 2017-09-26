@@ -418,6 +418,13 @@ DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
 );
 ```
 
++++
+### Composition - summary
+
+- Via `map` and `bind` we transform `DB` values in new values as needed
+- Transformation via regular (**pure**) functions
+- Actual execution of side effects at 'edge of the world'
+
 ---
 ### Summary
 - You write the SQL
@@ -425,15 +432,7 @@ DB<Unit> wipeUser = deleteOrders(user).bind(ignore ->
 - We handle the JDBC boilerplate
 
 +++
-### Summary
-- Flexibility
-- Performance
-    - Pure SQL
-    - Abstraction practically zero-cost
-- Robustness and sanity
-- Reuse and conciseness through composition
-
-+++
 ### Thank you!
+Learn more at
 <span>https://github.com/novarto-oss/sane-dbc</span>
 
