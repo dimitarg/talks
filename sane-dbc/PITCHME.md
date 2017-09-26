@@ -79,7 +79,6 @@ int y = foo();
 - Function composition |
 - Equational reasoning |
 
-
 +++
 ### Referential transparency - broken
 
