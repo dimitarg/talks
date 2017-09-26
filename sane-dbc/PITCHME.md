@@ -76,7 +76,8 @@ int x = foo();
 int y = foo();
 ```
 
-- Powerful reasoning technique: [equational reasoning](https://www.google.bg/search?q=equational+reasoning) |
+- Function composition |
+- Equational reasoning |
 
 
 +++
