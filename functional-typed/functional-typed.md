@@ -3,19 +3,24 @@
 
 ## Intro
 
-In this post I would like to argue that there is no such thing as untyped functional programming.
-To put it another way, I argue that functional programming is **always** typed. Therefore terms such as 
-'untyped functional programming' / 'non-typed functional programming' are ill-defined; and by extension,
-arguments based on such terms are ill-defined in their genesis.
+In this post I would like to argue that there is no such thing as non-typed functional programming.
+To put it another way, I argue that functional programming is **always** typed, regardless of tools or language
+specifics, or our subjective views on the matter.
 
-The above claim should read exactly as it is written - all functional programming is typed. Specifically, 
-this post is not a dynamic vs static languages post - although I will, inevitably, touch on the subject.
+Then, with the above claim in mind, I would like to show that some parts of the static vs dynamic debate are
+nonsensical and/or useless, throw them away, and reduce the debate to an essential, normalized form; and ask
+the reader to pick up the debate from there, or suggest another normalized form which is more grounded than mine.
+
+
 
 ## What functional programming is
 
 I believe that by now there is an established, non-controversial definition of functional programming.
 
 > Functional programming is programming with functions.
+
+(**I believe that this was said by @runarorama - I'm not 100% sure, please contact me if
+the attribution is wrong**)
 
 'Functions' here means referentially transparent, total functions, as in 'mathematical functions'.
 Side effects aside, the majority of our program is comprised of mathematical functions. We do this
@@ -55,7 +60,7 @@ R = {(1, true), (2, false), (3, true), (3, false)}
 
 Let us now be specific about a couple of clarifications arising from the above definition of function:
 - A function is **total** - each element of the domain (input set) must be mapped to some element of the codomain (output set)
-- To define a function, one needs to explicitly define the domain and codomain of the function
+- To define a function, one needs to **explicitly define the domain and codomain** of the function
 
 Let us expand on the latter point.
 
@@ -85,12 +90,43 @@ if the domain or codomain is not defined, it is not a function.
 
 ## Functional programming is typed
 
-If functional programming is programming with functions, and functions are typed, then functional programming is typed.
+If functional programming is programming with functions, and functions are typed, then 
+functional programming must be typed.
+
 There is no deeper meaning in this paragraph. It is just a logical argument - hopefully, a sound one.
+
+## Don't take my word for it
+
+Here is a [mathematician on the internet](https://youtu.be/6t6bsWVOIzs?t=428) saying that functions are typed.
+
+P.S. The above keynote, by Dr. Emily Riehl, is really cool and you should watch it if you are interested in computation. It is also
+the final thing that prompted me to write this post.
+
 
 ## Your language does not matter - concepts come first
 
+That functional programming itself is typed, if you decide to acknowledge it, does not pertain in any way to whether your
+language of choice is statically or dynamically typed. This is not a claim in itself, but an instance of a more
+general scheme:
+
+(Mathematical) objects are, well, what they are - they are well-defined by their structure and properties;
+it is our degree of understanding of them that may vary, or our representation of these objects in our tools.
+Those are external and subjective facets, not intrinsic to the objects of study; the objects stay the same regardless.
+
+
 ## Uni-typed versus implicitly typed
+
+A dynamically-typed language can be viewed as a statically typed language where the sole static type is
+a product type of all the types representable at runtime. In fact, it has
+[been argued](https://existentialtype.wordpress.com/2011/03/19/dynamic-languages-are-static-languages/)
+that dynamic languages not only can be viewed as, but in the end are, 'uni-typed'.
+
+In practice things are worse.
+
+
+
+
+## On the dynamic versus static debate
 
 ## On the nature of things
 
